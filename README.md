@@ -21,12 +21,10 @@ Este é um jogo da forca desenvolvido em Bash, onde o jogador tenta adivinhar um
    - Se a letra estiver na palavra, ela é revelada; caso contrário, uma parte do boneco da forca é desenhada.
 
 5. **Adivinhando a Palavra:**
-   - O jogador também pode tentar adivinhar a palavra completa digitando "DESISTO".
    - Ao adivinhar incorretamente ou exceder o número de tentativas permitidas, o jogo é encerrado.
 
 6. **Personalização:**
-   - A palavra a ser adivinhada pode ser alterada editando a variável `PALAVRA` no código.
-   - O layout do boneco pode ser personalizado editando as funções que desenham as diferentes partes do boneco.
+   - A palavra a ser adivinhada pode ser alterada editando o arquivo palavras.txt que foi baixado junto com o jogo.
 
 ### Funcionalidades Adicionais
 
