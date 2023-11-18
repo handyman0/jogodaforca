@@ -1,4 +1,4 @@
-# Jogo da Forca em Bash - `jogodaforca.sh`
+# Jogo da Forca em Bash
 
 Este é um jogo da forca desenvolvido em Bash, onde o jogador tenta adivinhar uma palavra oculta por meio de tentativas de letras ou adivinhando a palavra completa.
 
