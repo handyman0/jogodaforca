@@ -1,37 +1,38 @@
 # Jogo da Forca em Bash
 
-Este é um jogo clássico da forca desenvolvido em Bash, onde você tenta adivinhar uma palavra oculta através de tentativas de letras ou arriscando a palavra completa.
+Este é um jogo da forca desenvolvido em Bash, onde o jogador tenta adivinhar uma palavra oculta por meio de tentativas de letras ou adivinhando a palavra completa.
 
 ### Como Jogar
 
-1. **Executando o Jogo:**
-   - Abra o terminal Bash e execute o script com `./jogodaforca.sh`.
-   - O jogo começará mostrando o layout inicial do jogo da forca.
+1. **Execução do Jogo:**
+   - Execute o script em um terminal Bash usando `./jogodaforca.sh`.
+   - O jogo começará exibindo um layout inicial do boneco da forca.
 
 2. **Regras do Jogo:**
-   - Uma palavra é selecionada aleatoriamente para você adivinhar.
-   - Você tem um número limitado de tentativas para adivinhar a palavra ou as letras corretas.
-
+   - O jogo seleciona aleatoriamente uma palavra para o jogador adivinhar.
+   - O jogador tem um número limitado de tentativas para adivinhar a palavra ou as letras corretas.
+  
 3. **Desistir do Jogo:**
-   - Se quiser desistir, digite "DESISTO" quando solicitado a inserir uma letra.
+   - Se o jogador desejar desistir, basta digitar "DESISTO" quando solicitado a inserir uma letra.
    - Isso revelará a palavra e encerrará o jogo imediatamente.
 
 4. **Entrada de Letras:**
-   - Insira uma letra quando solicitado.
-   - Se a letra estiver na palavra, ela será revelada; caso contrário, uma parte do boneco da forca será desenhada.
+   - O jogador é solicitado a inserir uma letra.
+   - Se a letra estiver na palavra, ela é revelada; caso contrário, uma parte do boneco da forca é desenhada.
 
 5. **Adivinhando a Palavra:**
-   - Se errar ou exceder o número de tentativas permitidas, o jogo termina.
+   - Ao adivinhar incorretamente ou exceder o número de tentativas permitidas, o jogo é encerrado.
 
 6. **Personalização:**
-   - A palavra a ser adivinhada pode ser alterada editando o arquivo `palavras.txt` fornecido junto com o jogo.
+   - A palavra a ser adivinhada pode ser alterada editando o arquivo palavras.txt que foi baixado junto com o jogo.
 
 ### Funcionalidades Adicionais
 
-- **Enforcado detalhado:** O boneco da forca foi atualizado com emojis Unicode para criar uma representação mais visual do enforcado durante o jogo.
+- **Funções de Desenho:** São funções que desenham diferentes partes do boneco da forca conforme o jogador erra tentativas.
+- **Loop Principal:** Controla o jogo, verificando as entradas do jogador, exibindo partes do boneco e terminando o jogo quando as condições são atendidas.
 
 ### Notas Finais
 
-Este jogo da forca em Bash é uma implementação simples, mas você pode expandi-lo ou modificá-lo conforme desejar.
+Este jogo da forca em Bash é uma implementação simples e pode ser expandido ou modificado conforme necessário.
 
 Divirta-se jogando! 😊🎮
