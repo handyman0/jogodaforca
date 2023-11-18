@@ -2,7 +2,7 @@
 
 Este é um jogo da forca desenvolvido em Bash, onde o jogador tenta adivinhar uma palavra oculta por meio de tentativas de letras ou adivinhando a palavra completa.
 
-### Como Jogar
+## Como Jogar
 
 1. **Execução do Jogo:**
    - Execute o script em um terminal Bash usando `./jogodaforca.sh`.
@@ -26,12 +26,22 @@ Este é um jogo da forca desenvolvido em Bash, onde o jogador tenta adivinhar um
 6. **Personalização:**
    - A palavra a ser adivinhada pode ser alterada editando o arquivo palavras.txt que foi baixado junto com o jogo.
 
-### Funcionalidades Adicionais
+## Funcionalidades Adicionais
 
 - **Funções de Desenho:** São funções que desenham diferentes partes do boneco da forca conforme o jogador erra tentativas.
 - **Loop Principal:** Controla o jogo, verificando as entradas do jogador, exibindo partes do boneco e terminando o jogo quando as condições são atendidas.
 
-### Notas Finais
+## Instruções de Uso
+
+1. Certifique-se de ter o Bash instalado.
+2. Baixe ou clone este repositório.
+3. Execute o jogo usando `./jogodaforca.sh`.
+
+## Como Contribuir
+
+Sinta-se à vontade para sugerir melhorias ou adicionar novos recursos ao jogo! Faça um fork deste repositório, faça suas alterações e envie uma solicitação pull.
+
+## Notas Finais
 
 Este jogo da forca em Bash é uma implementação simples e pode ser expandido ou modificado conforme necessário.
 
