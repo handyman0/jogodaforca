@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # CRIANDO FUNÇÕES DE ERRO
-erro_cabeça() {
+erro_cabeca() {
 	echo "------------------|"
 	echo "|                 |"
 	echo "|                 |"
@@ -99,12 +99,27 @@ erro_perna_e() {
 	echo "|     "
 	echo "|     "
 }
-
-
+layout() {
+echo
+echo "------------------|"
+echo "|                 |"
+echo "|                 |"
+echo "|                 |"
+echo "|     "
+echo "|     "
+echo "|     "
+echo "|     "
+echo "|     "
+echo "|     "
+echo "|     "
+echo "|     "
+echo "|     "
+echo "|     "
+}
 # dando boas vindas
 clear
 echo "jogo da forca"
-
+layout
 # palavra para sortear
 PALAVRA="garrafa"
 
@@ -117,8 +132,8 @@ TENTATIVAS_ERRADAS=()
 
 while true; do
 	# solicitando ao jogandor uma letra
-	read -p "to pensando em uma palavra, chute uma letra!" LETRA
-
+	read -p "to pensando em uma palavra!, chute uma letra: " LETRA
+	
 	# fazendo o tratamento de minusculas e maiusculas
 	LETRA=$(echo $LETRA | tr '[:upper:]' '[:lower:]')
 	PALAVRA=$(echo $PALAVRA | tr '[:upper:]' '[:lower:]')
@@ -126,23 +141,85 @@ while true; do
 	# verificando a resposta
 	if echo "$PALAVRA" | grep -q "$LETRA";
 	then
+		clear
 		echo "tem a letra '$LETRA'!"
 		TENTATIVAS_CERTAS+=("$LETRA")
+		if [ ${#TENTATIVAS_ERRADAS[@]} -eq 0 ]; then	
+		layout
+		else
+			# Mostrar as partes correspondentes do boneco
+			case ${#TENTATIVAS_ERRADAS[@]} in
+				1)
+					erro_cabeca
+					;;
+				2)
+					erro_braco_e
+					;;
+				3)
+					erro_braco_d
+					;;
+				4)
+					erro_corpo
+					;;
+				5)
+					erro_perna_e
+					;;
+				6)
+					erro_perna_d
+					;;
+			esac
+		fi
 	else
-		read -p "chute mais uma letra" LETRA
-		echo "você errou, tem 7 letras!"
+		clear
+		echo "você errou, chute mais uma letra" 
+		echo "tem 7 letras!"
 		TENTATIVAS_ERRADAS+=("$LETRA")
+		
+		# Mostrar as partes correspondentes do boneco
+		case ${#TENTATIVAS_ERRADAS[@]} in
+			1)
+				erro_cabeca
+				;;
+			2)
+				erro_braco_e
+				;;
+			3)
+				erro_braco_d
+				;;
+			4)
+				erro_corpo
+				;;
+			5)
+				erro_perna_e
+				;;
+			6)
+				erro_perna_d
+				;;
+		esac
 	fi
 
 	# fazendo uma lista de letras certas e erradas
 	echo "tentativas certas: ${TENTATIVAS_CERTAS[*]}"
 	echo "tentativas erradas: ${TENTATIVAS_ERRADAS[*]}"
 	echo "Tentativas restantes: $((NUM_TENTATIVAS - ${#TENTATIVAS_ERRADAS[@]}))"
-
+	
+	
 	# verificando se o jogo acabou
 	if (( ${#TENTATIVAS_ERRADAS[@]} >= NUM_TENTATIVAS )); then
 		echo "Você excedeu o número de tentativas permitidas. Fim de jogo!"
 		break
+	fi
+	if (( ${#TENTATIVAS_CERTAS[@]} >= $(echo -n "$PALAVRA" | fold -w1 | sort -u | wc -l) )); then
+		read -p "você colocou todas as letras! chute a palavra:" CHUTE
+		if [ "$CHUTE" == "$PALAVRA" ]; then
+			clear
+			echo "PARABÉNS, VOCÊ ACERTOU!"
+			echo "a palavra misteriosa é $PALAVRA"
+			sleep 3
+			break
+		else
+			echo "você errou!"
+		fi
 	fi
 done
 
